@@ -1,40 +1,48 @@
 # Micro-Tool Launch Operator
 
-A universal, agent-agnostic skill to take a micro-tool website from idea to live deployment, SEO, indexing, and AdSense monetization. 
+A universal, agent-agnostic skill to take a micro-tool website from idea to live deployment, SEO, indexing, and AdSense monetization.
 
 Works with **Claude Code, Cursor, OpenCode, Codex, Antigravity, GitHub Copilot, Windsurf** and any AI agent using **OpenRouter** or direct APIs.
 
 ## Quick Start
 
-### Fastest path — any agent, one command
+### 1) OpenCode Skills CLI (Recommended for OpenCode users)
 
-The open [skills CLI](https://github.com/vercel-labs/skills) installs this skill into 70+ agents (Claude Code, Cursor, Codex, Copilot, Cline, and more):
+If you use [OpenCode](https://opencode.ai), you can install this skill directly with their CLI:
+
+```bash
+curl -fsSL https://opencodeskills.dev/install.sh | sh -s -- install microtool-launch-operator
+```
+
+> *Note:* This only works if the skill is listed on [opencodeskills.dev](https://opencodeskills.dev). If it's not live there yet, use option 2 below.
+
+### 2) Vercel Skills CLI (Works with 70+ agents)
+
+The [vercel-labs/skills](https://github.com/vercel-labs/skills) CLI is the most universal way and works across almost every agent right now.
 
 ```bash
 npx skills add inyogeshwar/microtool-launch-operator-skill
 ```
 
-Browse before installing:
+Browse available skills before installing:
 
 ```bash
 npx skills add inyogeshwar/microtool-launch-operator-skill --list
 ```
 
-### Grab just this skill
-
-If you only want the `microtool-launch-operator` skill:
+Install only this skill:
 
 ```bash
 npx skills add inyogeshwar/microtool-launch-operator-skill --skill microtool-launch-operator
 ```
 
-> **Note:** Installing a single skill copies only `skills/<name>/`, not the entire repo. The skill will still work, but paths to supplementary files in `references/` may not be available. For the full experience with all prompts, checklists, templates and references, it's recommended to install the whole repo or clone it.
+> **Note:** Installing a single skill copies only `skills/<name>/`, not the entire repo. You'll still get the core `SKILL.md`, but some files under `references/` may not be copied. For the full experience with prompts, checklists, templates and references, use the whole-repo install or clone it.
 
 ## Prefer a native integration?
 
 ### Claude Code (Recommended)
 
-**Option 1: Marketplace (easiest)**
+**Option 1: Marketplace**
 
 ```bash
 /plugin marketplace add https://github.com/inyogeshwar/microtool-launch-operator-skill.git
