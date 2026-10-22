@@ -1,0 +1,41 @@
+{
+  "name": "microtool-launch-operator-marketplace",
+  "owner": {
+    "name": "inyogeshwar",
+    "email": "inyogeshwar@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Micro-Tool Launch Operator skill marketplace",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "microtool-launch-operator",
+      "source": "./",
+      "description": "Universal agent-agnostic operator workflow for launching a monetizable micro-tool website from research through deployment, SEO, indexing, and AdSense.",
+      "version": "1.0.0",
+      "author": {
+        "name": "inyogeshwar"
+      },
+      "homepage": "https://github.com/inyogeshwar/microtool-launch-operator-skill",
+      "repository": "https://github.com/inyogeshwar/microtool-launch-operator-skill",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "agent-skills",
+        "microtools",
+        "seo",
+        "adsense",
+        "astro",
+        "cloudflare-pages",
+        "microtool-launch",
+        "openrouter",
+        "claude-code"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/microtool-launch-operator"
+      ]
+    }
+  ]
+}
