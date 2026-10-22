@@ -32,11 +32,18 @@ npx skills add inyogeshwar/microtool-launch-operator-skill --skill microtool-lau
 
 ### Claude Code (Recommended)
 
-**Option 1: Marketplace**
+**Option 1: Marketplace (Recommended)**
+
+Add this marketplace to Claude Code:
 
 ```bash
-/plugin marketplace add https://github.com/inyogeshwar/microtool-launch-operator-skill.git
-/plugin install microtool-launch-operator@microtool-launch-operator-skill
+/plugin marketplace add inyogeshwar/microtool-launch-operator-skill
+```
+
+Then install the skill:
+
+```bash
+/plugin install microtool-launch-operator@microtool-launch-operator-marketplace
 ```
 
 **Option 2: Local plugin dir**
@@ -46,13 +53,19 @@ git clone https://github.com/inyogeshwar/microtool-launch-operator-skill.git
 claude --plugin-dir ./microtool-launch-operator-skill
 ```
 
+**Option 3: Vercel Skills CLI**
+
+```bash
+npx skills add inyogeshwar/microtool-launch-operator-skill --skill microtool-launch-operator
+```
+
 ### Cursor
 
 Copy `skills/microtool-launch-operator/` to `.cursor/skills/` in your project. Keep short policies in `.cursor/rules/*.mdc`. Avoid pasting the full skill into rules.
 
 ### OpenCode
 
-Copy `skills/microtool-launch-operator/` to `.opencode/skills/` (project-local) or `~/.config/opencode/skills/` (global). Use OpenCode's built-in `skill` tool to load it. You can also add custom commands under `.opencode/commands/` if needed.
+Copy `skills/microtool-launch-operator/` to `.opencode/skills/` (project-local) or `~/.config/opencode/skills/` (global). Use OpenCode's built-in `skill` tool to load it.
 
 ### Codex (CLI v0.122+)
 
@@ -85,8 +98,6 @@ Or be explicit:
 Read skills/microtool-launch-operator/SKILL.md and act as the Micro-Tool Launch Operator. Start at Phase 0. Ask me max 3 questions at a time.
 ```
 
-The agent will follow the full operator workflow step by step with verification gates, safety checks, and evidence at every phase.
-
 ## Structure
 
 ```text
@@ -111,6 +122,15 @@ skills/microtool-launch-operator/
 - **Safety-First** – Asks confirmation before domain, DNS or AdSense actions
 - **Token-Efficient** – Progressive disclosure, only loads references when needed
 - **Hinglish-Friendly** – Natural, practical communication style
+
+## Antigravity Compatibility
+
+This repo includes both structures for maximum compatibility:
+
+- `skills/microtool-launch-operator/` – for Vercel `skills` CLI and most agents
+- `.agent/skills/microtool-launch-operator/` – for Google Antigravity
+
+You can clone this repo directly into your project and Antigravity will pick up the skill from `.agent/skills/`.
 
 ## License
 
