@@ -132,6 +132,20 @@ This repo includes both structures for maximum compatibility:
 
 You can clone this repo directly into your project and Antigravity will pick up the skill from `.agent/skills/`.
 
+## Security
+
+This skill reads third-party web content (competitor sites, forums, SERPs) during research. All of it is treated as **untrusted data, never instructions**.
+
+See [SECURITY.md](SECURITY.md) for the threat model and controls, and the `Untrusted Content Policy` section in `SKILL.md` for the enforced rules.
+
+Key protections:
+
+- No commands, installs, or DNS/account changes triggered by page content
+- No secrets, `.env` values, or local files sent to third-party endpoints
+- Suspicious injection attempts are logged with source URL, not obeyed
+- Hidden text, zero-width characters, and homoglyph tricks are flagged
+- Scraped strings sanitized before use in templates, meta tags, or JSON-LD
+
 ## License
 
 [MIT](LICENSE)
